@@ -1,0 +1,26 @@
+<% if @document.blank? %>
+  <h2>Nothing came back</h2>
+
+<% else %>
+
+  <table>
+    <tr>
+      <th>Term</th>
+      <th>Path</th>
+      <th>Sample</th>
+    </tr>
+
+    <% @document.each do |doc| %>
+      <tr>
+        <td> <%= doc.term %> </td>
+        <td> <%= doc.path %> </td>
+        <td> <%= doc.sample %></td>
+      </tr>
+    <% end %>
+
+  </table>
+
+<% end %>
+
+
+<%= link_to "Go back!", 'home' %>
