@@ -9,7 +9,21 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <!--
+  creates the top navbar that shows in every page
+  and add the "yield part inside a container"
+  -->
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-light bg-light">
+      <span class="navbar-brand mb-0 h2">by Fernando Braga</span>
+    </nav>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+
+
+
   </body>
 </html>

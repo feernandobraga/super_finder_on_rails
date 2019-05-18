@@ -1,25 +1,13 @@
-<style>
-  table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 60%;
-  }
+<!--
+this page will be called by the fetch method in the documents_controller
+and will handle searches that have been found in the database.
+First it exhibits a message and then render's a table with the content
+-->
+<div class="alert alert-success alert-dismissible fade show mt-5" role="alert">
+  I've found a record on the <strong>Database</strong> for <strong><%=@term %></strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
-</style>
-
-
-<h1>Documents#fetch</h1>
-<p>Find me in app/views/documents/result.html.erb</p>
-
-<h2>This came from the database</h2>
-
-<%= render 'table' %>>
+<%= render 'table' %>

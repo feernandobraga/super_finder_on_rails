@@ -1,26 +1,35 @@
-<style>
-  table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 60%;
-  }
+<!--
+This view is responsible for handling the requests that
+were not found on the database.
+It will render the appropriate component based on the
+content of the @message.
+If @message has a content, it will display the message, however,
+if the @message is empty it means that a record was added to
+the database.
+-->
 
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
+<% if @message %>
+  <div class="alert alert-danger alert-dismissible fade show mt-5" role="alert">
+    <strong><%= @message %></strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
 
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
-</style>
+<% else %>
 
+  <div class="alert alert-success alert-dismissible fade show mt-5" role="alert">
+    <strong><%= @term %></strong> was found and added to the database
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
 
+<% end %>
 
-<h1>Documents#result</h1>
-<p>Find me in app/views/documents/result.html.erb</p>
-
-<h2>This came from the HDD and was saved on the database</h2>
-
+<!--
+after the message it renders the table
+if the content is empty, only the "Go Back!" button will be displayed
+otherwise, the table will be presented.
+-->
 <%= render 'table' %>

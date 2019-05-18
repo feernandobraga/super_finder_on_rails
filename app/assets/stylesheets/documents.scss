@@ -1,3 +1,20 @@
 // Place all the styles related to the Documents controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+includes the bootstrap gem and some tweaks for its elements
+ */
+@import "bootstrap";
+
+.container {
+  width: 70%;
+}
+
+#path {
+  width: 500px;
+}
+
+#term {
+  width: 400px
+}

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'documents/result'
   post 'documents/home', to: "documents#fetch"
 
+  get 'documents/all'
   # get 'documents/fetch', to: "documents#fetch"
 
 end

@@ -1,20 +1,38 @@
-<h1>Documents#home</h1>
-<p>Find me in app/views/documents/home.html.erb</p>
+<!--
+Creates the application banner
+The majority of the styling was done
+through the bootstrap gem
+-->
 
-<%= @somevalue %>
+<div class="jumbotron jumbotron-fluid border border-info">
+  <div class="container">
+    <h1 class="display-4">Super Finder ON RAILS!</h1>
+    <p class="lead" id="subtitle">Enter a term and a path below and I will search it for you</p>
+  </div>
+</div>
 
-<%= form_tag documents_home_path do %>
-  <p>
-    <%= label_tag "Term" %>  </br>
-    <%= text_field_tag :term %>
-  </p>
 
-  <p>
-    <%= label_tag "Path" %> </br>
-    <%= text_field_tag :path %>
-  </p>
- <p> <%= submit_tag "Go Fetch!"%> </p>
-<% end %>
 
-<%= @term %>
-<%= @path %>
+
+<!--
+Creates the form that will grab the user input
+text_field_tags and submit_tags where used to
+pass the parameters through to the model
+-->
+<nav class="navbar navbar-light bg-light">
+
+    <%= form_tag documents_home_path, class: "form-inline" do %>
+
+      <%= text_field_tag :term, nil, class: "form-control mr-sm-2", id: "term", placeholder: "Term", required: "true" %>
+      <%= text_field_tag :path, nil, class: "form-control mr-sm-2", id: "path", placeholder: "Path", required: 'true' %>
+      <%= submit_tag "Go Fetch!", :class => "btn btn-outline-success my-2 my-sm-0", type: "submit"%>
+    <% end %>
+
+</nav>
+
+<!--
+creates a link to the view that will display
+the whole database content
+-->
+<%= link_to "Show database content", 'all', class: "btn btn-outline-secondary mt-3" %>
+
